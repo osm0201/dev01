@@ -4,7 +4,7 @@ pipeline {
     stages { 
         stage('Git Checkout') { 
             steps { 
-                git credentialsId: 'github-token', url: 'https://github.com/osm0201/dev01.git' 
+                git credentialsId: 'github-token', url: 'https://github.com/osm0201/dev01.git', branch: 'main' 
             } 
         } 
  
