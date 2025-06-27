@@ -16,7 +16,7 @@ pipeline {
  
         stage('Push to DockerHub') { 
             steps { 
-                withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 
+                withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 
 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) { 
                     sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin' 
                     sh 'docker push osemin0201/dev01:1.0' 
